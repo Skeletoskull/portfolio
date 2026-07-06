@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SignalBackground from './SignalBackground';
 
 const Hero = () => {
   return (
@@ -26,6 +27,7 @@ const Hero = () => {
         },
       }}
     >
+      <SignalBackground />
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: { xs: 'wrap', md: 'nowrap' } }}>
           <Box sx={{ flex: 1 }}>
