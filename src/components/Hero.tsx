@@ -199,7 +199,7 @@ const Hero = () => {
               >
                 <Box
                   component="img"
-                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  src="profile.jpg"
                   alt="Ahmad Jamal Khan"
                   loading="eager"
                   sx={{
