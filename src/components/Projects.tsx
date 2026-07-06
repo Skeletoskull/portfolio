@@ -107,7 +107,7 @@ const Projects = () => {
                 mb: 2,
               }}
             >
-              <span style={{ color: theme.palette.primary.main }}>03.</span> Some Things I've Built
+              <span style={{ color: theme.palette.primary.main }}>05.</span> Some Things I've Built
             </Typography>
             <Typography variant="h2">Featured Projects</Typography>
           </Box>

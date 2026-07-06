@@ -56,7 +56,7 @@ const Hero = () => {
                 sx={{
                   fontSize: { xs: '2.5rem', md: '4rem' },
                   fontWeight: 'bold',
-                  background: 'linear-gradient(45deg, #00D8FF, #FF69B4)',
+                  background: 'linear-gradient(45deg, #00D8FF, #64FFDA)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   mb: 2,

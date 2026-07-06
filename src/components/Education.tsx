@@ -60,7 +60,7 @@ const Education = () => {
                 mb: 2,
               }}
             >
-              <span style={{ color: theme.palette.primary.main }}>02.</span> Where I've Studied
+              <span style={{ color: theme.palette.primary.main }}>03.</span> Where I've Studied
             </Typography>
             <Typography variant="h2">Education</Typography>
           </Box>

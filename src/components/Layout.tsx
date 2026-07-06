@@ -12,11 +12,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   });
 
   const navigation = [
-    { name: 'About', to: 'hero' },
+    { name: 'About', to: 'about' },
     { name: 'Experience', to: 'experience' },
     { name: 'Education', to: 'education' },
     { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
+    { name: 'Contact', to: 'contact' },
   ];
 
   const socialLinks = [
