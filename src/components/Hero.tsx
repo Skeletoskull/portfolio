@@ -29,8 +29,8 @@ const Hero = () => {
     >
       <SignalBackground />
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: { xs: 'wrap', md: 'nowrap' } }}>
-          <Box sx={{ flex: 1 }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, alignItems: 'center', gap: { xs: 4, md: 8 } }}>
+          <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              style={{ display: 'flex', gap: '1rem' }}
+              style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
             >
               <Button
                 variant="outlined"
@@ -163,7 +163,9 @@ const Hero = () => {
           <Box
             sx={{
               flex: '0 0 auto',
-              display: { xs: 'none', md: 'block' }
+              display: 'block',
+              width: { xs: 200, sm: 240, md: 300 },
+              height: { xs: 200, sm: 240, md: 300 },
             }}
           >
             <motion.div
@@ -176,8 +178,8 @@ const Hero = () => {
                 stiffness: 100
               }}
               style={{
-                width: '300px',
-                height: '300px',
+                width: '100%',
+                height: '100%',
                 position: 'relative',
               }}
             >

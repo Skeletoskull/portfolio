@@ -1,4 +1,4 @@
-import { Box, Typography, Container, useTheme, Grid, Chip } from '@mui/material';
+import { Box, Typography, Container, useTheme, useMediaQuery, Grid, Chip } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@mui/lab';
 import { motion } from 'framer-motion';
 import SchoolIcon from '@mui/icons-material/School';
@@ -25,6 +25,7 @@ const certifications = [
 
 const Education = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Box
@@ -59,11 +60,11 @@ const Education = () => {
           </Box>
 
           <Box sx={{ maxWidth: '800px', mx: 'auto' }}>
-            <Timeline position="alternate">
+            <Timeline position={isMobile ? 'right' : 'alternate'} sx={{ p: { xs: 0, md: 2 } }}>
               {education.map((edu, index) => (
-                <TimelineItem key={index}>
+                <TimelineItem key={index} sx={{ '&::before': { display: { xs: 'none', md: 'block' } } }}>
                   <TimelineOppositeContent
-                    sx={{ m: 'auto 0', color: 'rgba(230, 241, 255, 0.7)', fontFamily: '"Fira Code", monospace', fontSize: { xs: '0.8rem', md: '0.9rem' } }}
+                    sx={{ display: { xs: 'none', md: 'block' }, m: 'auto 0', color: 'rgba(230, 241, 255, 0.7)', fontFamily: '"Fira Code", monospace', fontSize: { xs: '0.8rem', md: '0.9rem' } }}
                   >
                     {edu.year}
                   </TimelineOppositeContent>
@@ -88,6 +89,9 @@ const Education = () => {
                           '&:hover': { transform: 'translateY(-5px)', boxShadow: '0 10px 20px rgba(0, 216, 255, 0.1)', borderColor: '#00D8FF' },
                         }}
                       >
+                        <Typography variant="caption" sx={{ display: { xs: 'block', md: 'none' }, color: theme.palette.primary.main, fontFamily: '"Fira Code", monospace', mb: 1 }}>
+                          {edu.year}
+                        </Typography>
                         <Typography variant="h5" component="h3" sx={{ color: '#00D8FF', mb: 1, fontWeight: 'bold' }}>
                           {edu.school}
                         </Typography>
