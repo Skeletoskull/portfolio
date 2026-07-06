@@ -1,6 +1,21 @@
-import { Box, Typography, Container, useTheme, Grid, Chip, Card, CardContent, CardMedia } from '@mui/material';
+import { Box, Typography, Container, useTheme, Grid, Chip, Card, CardContent, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FlightIcon from '@mui/icons-material/Flight';
+import RadarIcon from '@mui/icons-material/Radar';
+import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
+import MemoryIcon from '@mui/icons-material/Memory';
+import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+import ScienceIcon from '@mui/icons-material/Science';
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  icon: JSX.Element;
+  link?: string;
+}
 
 const Projects = () => {
   const theme = useTheme();
@@ -9,36 +24,49 @@ const Projects = () => {
     threshold: 0.1,
   });
 
-  const projects = [
+  const projects: Project[] = [
     {
-      title: 'Remote Sensing of Heart Beat using a Micromotion Doppler Radar',
-      description: 'Developed a system using a micromotion doppler radar for non-contact heart rate monitoring. Implemented signal processing algorithms to extract heart rate from radar data.',
-      technologies: ['Radar Technology', 'Signal Processing', 'MATLAB', 'GNURadio'],
-      image: 'https://placehold.co/600x400/112240/00D8FF?text=Heart+Rate+Radar',
+      title: 'DroneSecurity — Windows Port',
+      description:
+        'Lead developer & maintainer of the open-source Windows port of a DJI DroneID receiver. Implemented Zadoff-Chu sequence detection and Turbo decoding to intercept and decode DJI signals in real time on BladeRF, and authored 50,000+ words of documentation.',
+      technologies: ['C++', 'Python', 'BladeRF', 'DSP', 'Open Source'],
+      link: 'https://github.com/Skeletoskull/DroneSecurity',
+      icon: <FlightIcon sx={{ fontSize: 60 }} />,
     },
     {
-      title: 'University Exit/Entry System',
-      description: 'Created a C++ based access control system for university premises. Implemented database management and user authentication features.',
-      technologies: ['C++', 'Database Management', 'SQL', 'Windows Forms'],
-      image: 'https://placehold.co/600x400/112240/00D8FF?text=University+Access+System',
+      title: 'DJI Drone Classifier',
+      description:
+        "Decodes RemoteID from a flying DJI drone on an NI USRP X310 with TwinRX daughterboards, demodulating IQ samples to expose the drone's live latitude/longitude, speed and serial number.",
+      technologies: ['Python', 'LabVIEW', 'USRP X310', 'RemoteID'],
+      icon: <RadarIcon sx={{ fontSize: 60 }} />,
     },
     {
-      title: 'Arduino-based G-Force Measurement',
-      description: 'Built a system to measure and analyze gravitational acceleration using Arduino and various sensors. Implemented data logging and real-time visualization.',
-      technologies: ['Arduino', 'Sensors', 'Data Analysis', 'C++'],
-      image: 'https://placehold.co/600x400/112240/00D8FF?text=G-Force+Measurement',
+      title: 'Multi-Band GNSS Resilience Testbed',
+      description:
+        'SDR-based signal generator that creates a controlled interference environment across the L1, L2 and S bands to analyze GNSS receiver resilience — with real-time health monitoring of SDRs and amplifiers and robust exception handling for hardware safety.',
+      technologies: ['NI USRP X310', 'LabVIEW', 'Python', 'GNSS'],
+      icon: <SatelliteAltIcon sx={{ fontSize: 60 }} />,
     },
     {
-      title: 'Ground Proximity Warning System',
-      description: 'Implemented safety systems for aircraft navigation and ground proximity alerts. Developed using PIC-16 and Arduino with various sensors.',
-      technologies: ['PIC-16', 'Arduino', 'Sensors', 'Embedded Systems'],
-      image: 'https://placehold.co/600x400/112240/00D8FF?text=GPWS',
+      title: 'O-Level Tester for EW Equipment',
+      description:
+        'Automated test system for electronic-warfare equipment — validating direction-finding, radiated-power, network functionality and built-in test (I-BIT). Built on a Raspberry Pi 4 with a Nuand BladeRF transceiver.',
+      technologies: ['Python', 'Raspberry Pi', 'BladeRF', 'SDR'],
+      icon: <MemoryIcon sx={{ fontSize: 60 }} />,
     },
     {
-      title: 'ATR 42-500 Aircraft Cockpit Modification',
-      description: 'Contributed to the redesign and modification of cockpit systems for improved functionality and user experience.',
-      technologies: ['Avionics', 'System Design', 'Cockpit Systems', 'Safety Analysis'],
-      image: 'https://placehold.co/600x400/112240/00D8FF?text=Cockpit+Modification',
+      title: 'BladeRF A4 FPGA Customization',
+      description:
+        'Extracted and modified the Verilog FPGA bitstream of the Nuand BladeRF A4, adding custom GPIO and status logic, then reflashed the FPGA to validate hardware-in-the-loop triggers.',
+      technologies: ['Verilog', 'VHDL', 'Intel Quartus', 'FPGA'],
+      icon: <DeveloperBoardIcon sx={{ fontSize: 60 }} />,
+    },
+    {
+      title: 'Pneumatic Test Bench Suite',
+      description:
+        'Modular, plug-in-based LabVIEW test application (queued-message-handler architecture) acquiring from pressure and flow transducers over NI-DAQmx, with a linear calibration module and automated report generation.',
+      technologies: ['LabVIEW', 'NI-DAQmx', 'Test Automation'],
+      icon: <ScienceIcon sx={{ fontSize: 60 }} />,
     },
   ];
 
@@ -91,6 +119,7 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  style={{ height: '100%' }}
                 >
                   <Card
                     sx={{
@@ -104,55 +133,70 @@ const Projects = () => {
                       '&:hover': {
                         transform: 'translateY(-5px)',
                         boxShadow: '0 10px 20px rgba(0, 216, 255, 0.1)',
+                        borderColor: 'rgba(0, 216, 255, 0.4)',
                       },
                     }}
                   >
-                    <CardMedia
-                      component="img"
-                      height="200"
-                      image={project.image}
-                      alt={project.title}
+                    <Box
                       sx={{
-                        objectFit: 'cover',
+                        height: 130,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#00D8FF',
+                        background:
+                          'linear-gradient(135deg, rgba(0, 216, 255, 0.15) 0%, rgba(255, 105, 180, 0.10) 100%)',
                         borderBottom: '1px solid rgba(0, 216, 255, 0.1)',
                       }}
-                    />
-                    <CardContent sx={{ flexGrow: 1 }}>
+                    >
+                      {project.icon}
+                    </Box>
+                    <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                       <Typography
                         variant="h5"
                         component="h3"
-                        sx={{
-                          color: '#00D8FF',
-                          mb: 2,
-                          fontWeight: 'bold',
-                        }}
+                        sx={{ color: '#00D8FF', mb: 2, fontWeight: 'bold' }}
                       >
                         {project.title}
                       </Typography>
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          color: '#E6F1FF',
-                          mb: 2,
-                        }}
-                      >
+                      <Typography variant="body1" sx={{ color: '#E6F1FF', mb: 2, flexGrow: 1 }}>
                         {project.description}
                       </Typography>
-                      <Box sx={{ mb: 2 }}>
+                      <Box sx={{ mb: project.link ? 2 : 0 }}>
                         {project.technologies.map((tech, techIndex) => (
                           <Chip
                             key={techIndex}
                             label={tech}
+                            size="small"
                             sx={{
                               mr: 1,
                               mb: 1,
                               backgroundColor: 'rgba(0, 216, 255, 0.1)',
                               color: '#00D8FF',
                               border: '1px solid rgba(0, 216, 255, 0.2)',
+                              fontFamily: '"Fira Code", monospace',
+                              fontSize: '0.72rem',
                             }}
                           />
                         ))}
                       </Box>
+                      {project.link && (
+                        <Button
+                          startIcon={<GitHubIcon />}
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          size="small"
+                          sx={{
+                            alignSelf: 'flex-start',
+                            color: '#00D8FF',
+                            textTransform: 'none',
+                            '&:hover': { backgroundColor: 'rgba(0, 216, 255, 0.1)' },
+                          }}
+                        >
+                          View Code
+                        </Button>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -165,4 +209,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

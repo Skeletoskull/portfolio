@@ -11,28 +11,28 @@ const Skills = () => {
 
   const skills = [
     {
-      category: 'Software Skills',
-      items: ['NI Labview', 'Quartus', 'Multisim', 'Vivado', 'GNU Radio'],
+      category: 'Test Automation',
+      items: ['LabVIEW (Advanced)', 'Keysight VEE (VEE Pro)', 'NI-DAQmx', 'SCPI / VISA', 'TestStand', 'GNU Radio'],
     },
     {
-      category: 'Programming Languages',
-      items: ['C++', 'Python', 'Linux (Terminal Commands, Bash/Shell)', 'Verilog-HDL & VHDL'],
+      category: 'Programming',
+      items: ['Python', 'C / C++', 'Verilog / VHDL', 'MATLAB', 'Linux / Bash'],
     },
     {
-      category: 'RF & Signal Processing',
-      items: ['USRP', 'SDR', 'Radar Systems', 'Signal Analysis', 'FPGA'],
+      category: 'RF & DSP',
+      items: ['SDR', 'USRP (X310, B210)', 'BladeRF', 'Modulation (AM/FM/PSK/ASK)', 'FFT & Filtering', 'RF Link Budgets'],
     },
     {
-      category: 'Embedded Systems',
-      items: ['Arduino', 'PIC-16', 'Sensors', 'Microcontrollers', 'Circuit Design'],
+      category: 'Domains',
+      items: ['GNSS (L1/L2/L5/S)', 'Counter-UAS', 'Protocol Reverse Engineering', 'Radar', 'Electronic Warfare (test)'],
     },
     {
-      category: 'Avionics',
-      items: ['Cockpit Systems', 'Navigation Systems', 'Safety Analysis', 'System Integration'],
+      category: 'Test Instruments',
+      items: ['Spectrum Analyzers', 'Signal Generators', 'Power Sensors', 'Oscilloscopes', 'NI cRIO'],
     },
     {
-      category: 'Soft Skills',
-      items: ['Problem Solving', 'Team Leadership', 'Technical Writing', 'Project Management', 'Mentoring'],
+      category: 'FPGA & Hardware',
+      items: ['Intel Quartus', 'Xilinx Vivado', 'LabVIEW FPGA', 'Microcontrollers', 'Hardware-in-the-Loop'],
     },
   ];
 

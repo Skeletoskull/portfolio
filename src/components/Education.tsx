@@ -5,11 +5,18 @@ import SchoolIcon from '@mui/icons-material/School';
 
 const education = [
   {
-    school: 'Institute of Space Technology',
+    school: 'Institute of Space Technology (IST)',
     degree: 'Bachelor of Science in Avionics Engineering',
     year: '2018 - 2022',
-    thesis: 'Thesis: Detection of Heart Beat using a Micromotion Doppler Radar',
-    description: 'Relevant coursework: Digital Signal Processing, Communication Systems, Control Systems, Microprocessors, Electromagnetic Theory, Radar Systems, Embedded Systems, Circuit Design, Electronics'
+    thesis: 'Final-year project: Non-contact heartbeat detection using a micromotion Doppler radar',
+    description: 'Relevant coursework: Digital Signal Processing, Analog & Digital Communication, Microwave Engineering, Antenna Theory & Design, Transmission Lines & Waveguides, Instrumentation & Measurements, Control Systems, Embedded Systems.'
+  },
+  {
+    school: 'Certifications & Languages',
+    degree: 'FPGA Design & HDL — University of Colorado Boulder (Coursera)',
+    year: '2024 / 2026',
+    thesis: 'IELTS Academic — Overall 7.5 (CEFR C1)',
+    description: 'Coursera: Introduction to FPGA Design for Embedded Systems; Hardware Description Languages for FPGA Design. Registered with the Pakistan Engineering Council (PEC).'
   }
 ];
 

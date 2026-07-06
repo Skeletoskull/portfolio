@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   const socialLinks = [
-    { icon: <GitHubIcon />, href: 'https://github.com/Ahmad-Jamal-Khan' },
+    { icon: <GitHubIcon />, href: 'https://github.com/Skeletoskull' },
     { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/ahmad-jamal-khan-jadoon/' },
     { icon: <EmailIcon />, href: 'mailto:engr.ahmadjamalkhan@gmail.com' },
   ];
@@ -79,7 +79,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </motion.a>
             ))}
             <motion.a
-              href="https://github.com/Ahmad-Jamal-Khan/portfolio/raw/gh-pages/ahmad_jamal_khan.pdf"
+              href="https://github.com/Skeletoskull/portfolio/raw/gh-pages/ahmad_jamal_khan.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

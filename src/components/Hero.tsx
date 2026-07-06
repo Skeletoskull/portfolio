@@ -79,7 +79,7 @@ const Hero = () => {
                   mb: 3,
                 }}
               >
-                I build advanced RF systems.
+                I build RF, SDR & test systems.
               </Typography>
             </motion.div>
 
@@ -98,7 +98,7 @@ const Hero = () => {
                   lineHeight: 1.7,
                 }}
               >
-                I'm an RF Systems Engineer specializing in radar systems, electronic warfare, and signal processing. Currently focused on developing innovative solutions for mission-critical defense applications at Pakistan Air Force.
+                I'm an RF / DSP engineer specializing in software-defined radio, signal processing and LabVIEW test automation. I reverse-engineer drone RF protocols, build multi-node SDR and GNSS testbeds, and develop automated RF measurement systems — currently as an RF Systems Engineer at Shaheen Aero Traders.
               </Typography>
             </motion.div>
 
@@ -111,7 +111,7 @@ const Hero = () => {
               <Button
                 variant="outlined"
                 startIcon={<EmailIcon />}
-                href="mailto:design.engineer.ahmadjamal@gmail.com"
+                href="mailto:engr.ahmadjamalkhan@gmail.com"
                 sx={{
                   borderColor: '#00D8FF',
                   color: '#00D8FF',
@@ -126,7 +126,7 @@ const Hero = () => {
               <Button
                 variant="outlined"
                 startIcon={<GitHubIcon />}
-                href="https://github.com/Ahmad-Jamal-Khan"
+                href="https://github.com/Skeletoskull"
                 target="_blank"
                 sx={{
                   borderColor: '#00D8FF',
@@ -199,22 +199,22 @@ const Hero = () => {
               >
                 <Box
                   component="img"
-                  src="profile.png"
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
                   alt="Ahmad Jamal Khan"
                   loading="eager"
                   sx={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'contain',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
                     borderRadius: '8px',
                     position: 'relative',
                     zIndex: 1,
                     transition: 'all 0.3s ease',
-                    p: 2,
-                    backgroundColor: 'rgba(0, 216, 255, 0.03)',
+                    filter: 'grayscale(15%) contrast(1.02)',
                     '&:hover': {
                       transform: 'translate(-5px, -5px)',
-                      backgroundColor: 'rgba(0, 216, 255, 0.05)',
+                      filter: 'grayscale(0%)',
                     },
                   }}
                   onError={(e) => {
